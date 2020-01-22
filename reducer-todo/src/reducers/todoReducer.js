@@ -26,6 +26,15 @@ export const reducer = (state, action) => {
                 ...state,
                 todos: [...state.todos, newTodo]
             }
+            case('MARK_COMPLETE'):
+            return{
+                ...state,
+                todos: state.todos.map(item => (
+                    item.id === action.payload
+                    ? {...item, completed: !item.completed}
+                    :item
+                ))
+            }
     default:
       return state;
   }

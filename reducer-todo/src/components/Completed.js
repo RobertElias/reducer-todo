@@ -9,6 +9,7 @@ export function Completed({ todo, dispatch }) {
   };
 
   return (
+      //Returns a line through completed todo item
     <div
       onClick={toggleCompleted}
       className={`todo${todo.completed ? "completed" : ""}`}

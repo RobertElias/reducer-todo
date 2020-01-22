@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import TodoForm from './components/TodoForm'
+import {ToDoList} from './components/ToDoList'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Import TodoList</h1>
-        <TodoForm/>
+        <ToDoList />
       </header>
     </div>
   );

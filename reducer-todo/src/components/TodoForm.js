@@ -1,8 +1,7 @@
-  
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-export const TodoForm = ({dispatch}) => {
-  const [items, setItems] = useState('');
+export const TodoForm = ({ dispatch }) => {
+  const [items, setItems] = useState("");
 
   const handleChanges = e => {
     setItems(e.target.value);
@@ -11,7 +10,7 @@ export const TodoForm = ({dispatch}) => {
   const submitForm = e => {
     e.preventDefault();
     dispatch({
-      type: 'AddTodo',
+      type: "AddTodo",
       payload: [items]
     });
   };
@@ -19,7 +18,7 @@ export const TodoForm = ({dispatch}) => {
   const clearCompleted = e => {
     e.preventDefault();
     dispatch({
-      type: 'ClearCompleted'
+      type: "ClearCompleted"
     });
   };
 
@@ -27,10 +26,15 @@ export const TodoForm = ({dispatch}) => {
     <div>
       <form onSubmit={submitForm}>
         <label>Todo</label>
-        <input name='todo' onChange={handleChanges} value={items} id={Date.now()} />
+        <input
+          name="todo"
+          onChange={handleChanges}
+          value={items}
+          id={Date.now()}
+        />
         <button>Add Item</button>
         <button onClick={clearCompleted}>Clear Item</button>
       </form>
     </div>
   );
-}
+};
